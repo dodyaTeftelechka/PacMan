@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8730F4B-DFD4-4443-A371-E0964C767A7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PacMan</RootNamespace>
+    <AssemblyName>PacMan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Architecture\IDots.cs" />
+    <Compile Include="Architecture\IField.cs" />
+    <Compile Include="Architecture\PacManWindow.cs" />
+    <Compile Include="Dots\Dot.cs" />
+    <Compile Include="Dots\Energizer.cs" />
+    <Compile Include="Dots\MapDots.cs" />
+    <Compile Include="Fields\FruitField.cs" />
+    <Compile Include="Fields\MapFields.cs" />
+    <Compile Include="Fields\SimpleField.cs" />
+    <Compile Include="Fields\SpawnField.cs" />
+    <Compile Include="Fields\SpawnLine.cs" />
+    <Compile Include="Fields\SpawnWall.cs" />
+    <Compile Include="Fields\VoidField.cs" />
+    <Compile Include="Fields\Wall.cs" />
+    <Compile Include="Footer.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameController.cs" />
+    <Compile Include="LivingCreatures\BreadthFirstSearch.cs" />
+    <Compile Include="LivingCreatures\Creature.cs" />
+    <Compile Include="LivingCreatures\Ghost.cs" />
+    <Compile Include="LivingCreatures\PacMan.cs" />
+    <Compile Include="LivingCreatures\Position.cs" />
+    <Compile Include="LivingCreatures\RoflGhost.cs" />
+    <Compile Include="LivingCreatures\ShadowGhost.cs" />
+    <Compile Include="LivingCreatures\TimerOfFearOrPursit.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Levels\Demo\fields.txt" />
+    <Content Include="Levels\StandartMap\dots.txt" />
+    <Content Include="Levels\StandartMap\energizers.txt" />
+    <Content Include="Levels\StandartMap\fields.txt" />
+    <Content Include="Pictures\Dots\Dot.png" />
+    <Content Include="Pictures\Dots\Energizer.png" />
+    <Content Include="Pictures\Fields\SimpleField.png" />
+    <Content Include="Pictures\Fields\SimpleField2.png" />
+    <Content Include="Pictures\Fields\VoidField.png" />
+    <Content Include="Pictures\Fruits\Apple.png" />
+    <Content Include="Pictures\Fruits\Bell.png" />
+    <Content Include="Pictures\Fruits\Cherry.png" />
+    <Content Include="Pictures\Fruits\Galaxian.png" />
+    <Content Include="Pictures\Fruits\Key.png" />
+    <Content Include="Pictures\Fruits\Melon.png" />
+    <Content Include="Pictures\Fruits\Orange.png" />
+    <Content Include="Pictures\Fruits\Strawberry.png" />
+    <Content Include="Pictures\Ghost\BlueFearEnd\frame_1.png" />
+    <Content Include="Pictures\Ghost\BlueFearEnd\frame_2.png" />
+    <Content Include="Pictures\Ghost\BlueFearEnd\frame_3.png" />
+    <Content Include="Pictures\Ghost\BlueFearEnd\frame_4.png" />
+    <Content Include="Pictures\Ghost\BlueFear\frame_1.png" />
+    <Content Include="Pictures\Ghost\BlueFear\frame_2.png" />
+    <Content Include="Pictures\Ghost\Died\Down\Down.png" />
+    <Content Include="Pictures\Ghost\Died\Left\Left.png" />
+    <Content Include="Pictures\Ghost\Died\Right\Right.png" />
+    <Content Include="Pictures\Ghost\Died\Up\Up.png" />
+    <Content Include="Pictures\Player\Died\frame_08.png" />
+    <Content Include="Pictures\Player\Died\frame_09.png" />
+    <Content Include="Pictures\Player\Died\frame_10.png" />
+    <Content Include="Pictures\Player\Died\frame_11.png" />
+    <Content Include="Pictures\Player\Died\frame_12.png" />
+    <Content Include="Pictures\Player\Died\frame_13.png" />
+    <Content Include="Pictures\Player\Died\frame_14.png" />
+    <Content Include="Pictures\Player\Died\frame_15.png" />
+    <Content Include="Pictures\Player\Died\frame_16.png" />
+    <Content Include="Pictures\Player\Died\frame_17.png" />
+    <Content Include="Pictures\Player\Died\frame_18.png" />
+    <Content Include="Pictures\Player\Died\frame_19.png" />
+    <Content Include="Pictures\Player\Died\frame_20.png" />
+    <Content Include="Pictures\Player\Run\Player1.png" />
+    <Content Include="Pictures\Player\Run\Player2.png" />
+    <Content Include="Pictures\Player\Run\Player3.png" />
+    <Content Include="Pictures\RoflGhost\RoflDown\Shadow1.png" />
+    <Content Include="Pictures\RoflGhost\RoflDown\Shadow2.png" />
+    <Content Include="Pictures\RoflGhost\RoflLeft\Shadow1.png" />
+    <Content Include="Pictures\RoflGhost\RoflLeft\Shadow2.png" />
+    <Content Include="Pictures\RoflGhost\RoflRight\Shadow1.png" />
+    <Content Include="Pictures\RoflGhost\RoflRight\Shadow2.png" />
+    <Content Include="Pictures\RoflGhost\RoflUp\Shadow1.png" />
+    <Content Include="Pictures\RoflGhost\RoflUp\Shadow2.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowDown\Shadow1.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowDown\Shadow2.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowLeft\Shadow1.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowLeft\Shadow2.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowRight\Shadow1.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowRight\Shadow2.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowUp\Shadow1.png" />
+    <Content Include="Pictures\ShadowGhost\ShadowUp\Shadow2.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0000.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0001.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0010.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0011.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0100.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0101.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0110.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo0111.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1000.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1001.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1010.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1011.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1100.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1101.png" />
+    <Content Include="Pictures\SpawnWalls\WallTo1110.png" />
+    <Content Include="Pictures\SpawnWalls\WallToLine.png" />
+    <Content Include="Pictures\Walls\cri_000000255791.png" />
+    <Content Include="Pictures\Walls\WallTo0000.png" />
+    <Content Include="Pictures\Walls\WallTo0001.png" />
+    <Content Include="Pictures\Walls\WallTo0010.png" />
+    <Content Include="Pictures\Walls\WallTo0011.png" />
+    <Content Include="Pictures\Walls\WallTo0100.png" />
+    <Content Include="Pictures\Walls\WallTo0101.png" />
+    <Content Include="Pictures\Walls\WallTo0110.png" />
+    <Content Include="Pictures\Walls\WallTo0111.png" />
+    <Content Include="Pictures\Walls\WallTo1000.png" />
+    <Content Include="Pictures\Walls\WallTo1001.png" />
+    <Content Include="Pictures\Walls\WallTo1010.png" />
+    <Content Include="Pictures\Walls\WallTo1011.png" />
+    <Content Include="Pictures\Walls\WallTo1100.png" />
+    <Content Include="Pictures\Walls\WallTo1101.png" />
+    <Content Include="Pictures\Walls\WallTo1110.png" />
+    <Content Include="Pictures\Walls\WallTo1111.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
